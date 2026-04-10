@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+
+abstract class AppColors {
+  AppColors._();
+  static const Color primary = Color(0xffC20167);
+
+  static const Color black = Color(0xff000000);
+  static const Color gray = Color(0xff544F4F);
+  static const Color primary2 = Color(0xff064198);
+  static const Color mauve = Color(0xffC388B3);
+
+  static LinearGradient appGradientColor({double end = 1.0}) => LinearGradient(
+    colors: [AppColors.primary2, AppColors.primary],
+    stops: [0.0, end],
+  );
+}

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pollo/core/routing/routes.dart';
 import 'package:pollo/features/auth/presentation/views/login_screen.dart';
-import 'package:pollo/features/onboarding/presentation/views/on_boarding_screen.dart';
+import 'package:pollo/features/onboarding_splash/presentation/views/onboarding_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings setting) {
     switch (setting.name) {
-      case Routes.onboarding:
+      case Routes.onboardingScreen:
         return MaterialPageRoute(
-          builder: (context) => const OnBoardingScreen(),
+          builder: (context) => const OnboardingScreen(),
         );
 
       case Routes.loginScreen:

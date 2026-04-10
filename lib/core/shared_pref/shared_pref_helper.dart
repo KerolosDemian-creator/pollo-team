@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+part 'shared_pref_keys.dart';
 class SharedPrefHelper {
   SharedPrefHelper._();
   static late SharedPreferences _sharedPreferences;
