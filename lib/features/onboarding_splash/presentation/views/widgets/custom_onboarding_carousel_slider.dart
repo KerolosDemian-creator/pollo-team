@@ -3,7 +3,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pollo/core/resources/assets.dart';
-import 'package:pollo/core/resources/colors.dart';
 import 'package:pollo/core/resources/styles.dart';
 import 'package:pollo/core/routing/routes.dart';
 import 'package:pollo/core/validation/extentions.dart';

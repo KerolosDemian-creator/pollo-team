@@ -10,7 +10,7 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('ar'), Locale('en')],
-      path: 'assets/translations', // مكان ملفات الترجمة
+      path: 'assets/translations',
       fallbackLocale: const Locale('en'),
       child: PolloApp(appRouter: AppRouter()),
     ),

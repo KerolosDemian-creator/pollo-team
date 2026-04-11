@@ -1,14 +1,31 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pollo/core/resources/colors.dart';
 
 class TextStyles {
   TextStyles._();
-  static TextStyle style24W700({Color? color}) {
+
+  static TextStyle style14W600({Color? color}) {
     return TextStyle(
-      fontSize: 24.sp,
+      fontSize: 14.sp,
+      color: color ?? Colors.white,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle style16W500({Color? color}) {
+    return TextStyle(
+      fontSize: 16.sp,
+      color: color ?? AppColors.gray,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle style18W500({Color? color}) {
+    return TextStyle(
+      fontSize: 18.sp,
       color: color ?? AppColors.black,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w500,
     );
   }
 
@@ -17,6 +34,14 @@ class TextStyles {
       fontSize: 20.sp,
       color: color ?? AppColors.gray,
       fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle style24W700({Color? color}) {
+    return TextStyle(
+      fontSize: 24.sp,
+      color: color ?? AppColors.black,
+      fontWeight: FontWeight.w700,
     );
   }
 }

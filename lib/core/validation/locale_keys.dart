@@ -8,6 +8,17 @@ abstract class LocaleKeys {
   static const String description1 = 'description1';
   static const String description2 = 'description2';
   static const String description3 = 'description3';
+  static const String signin = 'signin';
+  static const String signInToRegisterationAccount =
+      'signInToRegisterationAccount';
+  static const String signup = 'signup';
+  static const String email = 'email';
+  static const String password = 'password';
+  static const String enterYourEmail = 'enterYourEmail';
+  static const String enterYourPassword = 'enterYourPassword';
+  static const String forgotPassword = 'forgotPassword';
+  static const String dontHaveAccount = 'dontHaveAccount';
+  static const String signInWith = 'signInWith';
 
   // Errors
   static const String connectionTimeout = 'errors.connection_timeout';

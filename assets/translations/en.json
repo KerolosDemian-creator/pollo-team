@@ -5,5 +5,15 @@
     "onboardingtitle3": "Expert Advice & Veterinary Support!",
     "description1": "Pollo Store! The perfect place to purchase veterinary products easily and safely.",
     "description2": "Manage poultry, livestock, fish, and pets effortlessly with a complete farm management solution at your fingertips.",
-    "description3": "Connect with expert veterinarians for quick guidance to care for your animals and resolve health issues efficiently."
+    "description3": "Connect with expert veterinarians for quick guidance to care for your animals and resolve health issues efficiently.",
+    "signin": "Sign in",
+    "signInToRegisterationAccount": "Sign in to your registration account",
+    "signup": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "enterYourEmail": "Enter Your Email",
+    "enterYourPassword": "Enter Your Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account? ",
+    "signInWith": "Sign in with"
 }
