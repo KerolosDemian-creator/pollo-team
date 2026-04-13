@@ -5,7 +5,7 @@ class UserModel {
   final String phone;
   final String email;
   final String username;
-  final int reviewsAvgRating;
+  final double reviewsAvgRating;
   final String createdAt;
   final String? image;
 
@@ -29,7 +29,7 @@ class UserModel {
       phone: json['phone'],
       email: json['email'],
       username: json['username'],
-      reviewsAvgRating: json['reviews_avg_rating'],
+      reviewsAvgRating: (json['reviews_avg_rating'] as num).toDouble(),
       createdAt: json['created_at'],
       image: json['image'],
     );
