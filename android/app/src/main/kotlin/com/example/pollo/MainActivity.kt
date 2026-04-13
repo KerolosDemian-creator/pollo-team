@@ -1,4 +1,4 @@
-package com.example.pollo
+package com.pollo.app
 
 import io.flutter.embedding.android.FlutterActivity
 

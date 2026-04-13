@@ -19,6 +19,18 @@ abstract class LocaleKeys {
   static const String forgotPassword = 'forgotPassword';
   static const String dontHaveAccount = 'dontHaveAccount';
   static const String signInWith = 'signInWith';
+  static const String signUpWith = 'signUpWith';
+  static const String registerWithYourValidEmailAddress =
+      'registerWithYourValidEmailAddress';
+  static const String name = 'name';
+  static const String enterYourName = 'enterYourName';
+  static const String phone = 'phone';
+  static const String enterYourPhone = 'enterYourPhone';
+  static const String confirmPassword = 'confirmPassword';
+  static const String haveAnAccount = 'haveAnAccount';
+  static const String whatAreYouLookingFor = 'whatAreYouLookingFor';
+  static const String categories = "categories";
+  static const String veterinarians = 'veterinarians';
 
   // Errors
   static const String connectionTimeout = 'errors.connection_timeout';

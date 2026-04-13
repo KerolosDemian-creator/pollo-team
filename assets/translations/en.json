@@ -15,5 +15,16 @@
     "enterYourPassword": "Enter Your Password",
     "forgotPassword": "Forgot Password?",
     "dontHaveAccount": "Don't have an account? ",
-    "signInWith": "Sign in with"
+    "signInWith": "Sign in with",
+    "registerWithYourValidEmailAddress": "Register with your valid email address",
+    "name": "Name",
+    "enterYourName": "Enter Your Name",
+    "confirmPassword": "Confirm Password",
+    "phone": "Phone",
+    "enterYourPhone": "Enter Your Phone",
+    "signUpWith": "Sign up with",
+    "haveAnAccount": "Have an account? ",
+    "whatAreYouLookingFor": "What are you looking for?",
+    "categories": "Categories",
+    "veterinarians": "Veterinarians"
 }

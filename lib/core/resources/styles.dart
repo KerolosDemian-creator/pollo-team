@@ -4,6 +4,13 @@ import 'package:pollo/core/resources/colors.dart';
 
 class TextStyles {
   TextStyles._();
+  static TextStyle style12W500({Color? color}) {
+    return TextStyle(
+      fontSize: 12.sp,
+      color: color ?? Colors.black,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
   static TextStyle style14W600({Color? color}) {
     return TextStyle(

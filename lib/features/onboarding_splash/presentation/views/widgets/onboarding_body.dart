@@ -17,7 +17,7 @@ class OnboardingBody extends StatelessWidget {
         child: Column(
           children: [
             Align(
-              alignment: AlignmentGeometry.centerRight,
+              alignment: Alignment.centerRight,
               child: CustomGradientText(
                 text: Text(
                   LocaleKeys.skip.tr(),

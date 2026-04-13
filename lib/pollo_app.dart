@@ -10,14 +10,14 @@ class PolloApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
         theme: ThemeData(scaffoldBackgroundColor: const Color(0xffFFFFFF)),
         locale: context.locale,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
-        home: SplashScreen(),
+        home: const SplashScreen(),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
       ),

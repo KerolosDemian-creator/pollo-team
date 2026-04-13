@@ -8,9 +8,11 @@ class CustomTxtField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.iconButton,
+    required this.keyboardType,
   });
   final String hintText;
   final IconButton iconButton;
+  final TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,19 +22,18 @@ class CustomTxtField extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(2),
       child: TextFormField(
+        keyboardType: keyboardType,
         decoration: InputDecoration(
           suffixIcon: iconButton,
-          contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
-          hint: Text(
-            hintText,
-            style: TextStyles.style16W500().copyWith(
-              color: AppColors.lightGray,
-            ),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 2, horizontal: 12),
+          hintText: hintText,
+          hintStyle: TextStyles.style16W500().copyWith(
+            color: AppColors.lightGray,
           ),
-
           filled: true,
           fillColor: Colors.white,
-          border: OutlineInputBorder(borderSide: BorderSide.none),
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
         ),
       ),
     );

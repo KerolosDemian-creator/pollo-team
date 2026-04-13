@@ -10,7 +10,7 @@ class OnboardingSkipButton extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
-        padding: EdgeInsets.all(1),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           gradient: AppColors.appGradientColor(end: .7),
           borderRadius: BorderRadius.circular(50.r),
@@ -21,14 +21,14 @@ class OnboardingSkipButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(50.r),
           ),
           child: Container(
-            margin: EdgeInsets.all(5),
+            margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               gradient: AppColors.appGradientColor(end: .7),
               borderRadius: BorderRadius.circular(30.r),
             ),
             child: IconButton(
               onPressed: ontap,
-              icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+              icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
             ),
           ),
         ),

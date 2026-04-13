@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "659528240127",
+    "project_id": "pollo-fde3e",
+    "storage_bucket": "pollo-fde3e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659528240127:android:355bcfd652252a21e8b5ca",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659528240127-err6ql56o669r6scea4tf2kt7mhhsh1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGjwk8OkibxKA3EbiT2HmNB65pZ6DDbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659528240127-err6ql56o669r6scea4tf2kt7mhhsh1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659528240127:android:a9ade2f624d6edd8e8b5ca",
+        "android_client_info": {
+          "package_name": "com.pollo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659528240127-err6ql56o669r6scea4tf2kt7mhhsh1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGjwk8OkibxKA3EbiT2HmNB65pZ6DDbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659528240127-err6ql56o669r6scea4tf2kt7mhhsh1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

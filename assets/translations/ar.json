@@ -15,5 +15,16 @@
     "enterYourPassword": "أدخل كلمة المرور الخاصة بك",
     "forgotPassword": "هل نسيت كلمة المرور؟",
     "dontHaveAccount": "ليس لديك حساب؟ ",
-    "signInWith": "تسجيل الدخول باستخدام"
+    "signInWith": "تسجيل الدخول باستخدام",
+    "registerWithYourValidEmailAddress": "سجل باستخدام عنوان بريدك الإلكتروني الصحيح",
+    "name": "الاسم",
+    "enterYourName": "أدخل اسمك",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "phone": "الهاتف",
+    "enterYourPhone": "أدخل رقم هاتفك",
+    "signUpWith": "إنشاء حساب باستخدام",
+    "haveAnAccount": "هل لديك حساب؟ ",
+    "whatAreYouLookingFor": "ما الذي تبحث عنه؟",
+    "categories": "فئات",
+    "veterinarians": "الأطباء البيطريين"
 }

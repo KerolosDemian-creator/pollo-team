@@ -1,111 +1,69 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pollo/core/theme/colors_manager.dart';
+import 'package:pollo/core/resources/colors.dart';
+import 'package:pollo/core/resources/styles.dart';
+
+import 'package:pollo/core/validation/locale_keys.dart';
+import 'package:pollo/core/widgets/custom_gradient_text.dart';
+
+import 'package:pollo/features/auth/presentation/views/widgets/sign_up_form.dart';
 
 class SignupBody extends StatelessWidget {
   const SignupBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Sign up'),
-        Form(
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             children: [
-              Text('Name'),
-
-              Container(
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(2),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
+              /// sign up appbar
+              Align(
+                alignment: Alignment.centerLeft,
+                child: CustomGradientText(
+                  text: Text(
+                    LocaleKeys.signup.tr(),
+                    style: TextStyles.style24W700().copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
+                  end: .8,
                 ),
               ),
-              Text('Email'),
 
-              Container(
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(2),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                  ),
+              /// register with your valid email address
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  LocaleKeys.registerWithYourValidEmailAddress.tr(),
+                  style: TextStyles.style16W500(),
                 ),
               ),
-              Text('Phone'),
+              SizedBox(height: 8.h),
 
-              Container(
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(2),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                  ),
-                ),
-              ),
-              Text('Password'),
-
-              Container(
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(2),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
+              /// gradient line
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  height: 6.h,
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    gradient: AppColors.appGradientColor(),
+                    borderRadius: BorderRadius.circular(30.r),
                   ),
                 ),
               ),
 
-              Text('Confirm Password'),
-
-              Container(
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(2),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
-                  ),
-                ),
-              ),
-              Container(
-                width: 245.w,
-                height: 80.h,
-                decoration: BoxDecoration(
-                  gradient: ColorsManager.primaryGradientColor,
-                ),
-                child: Text('Sign up'),
-              ),
+              const SignUpForm(),
+              SizedBox(height: 20.h),
             ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

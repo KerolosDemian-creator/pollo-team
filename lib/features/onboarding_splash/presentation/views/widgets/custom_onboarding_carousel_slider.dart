@@ -76,7 +76,7 @@ class CustomOnboardingCarouselSlider extends StatelessWidget {
                 style: TextStyles.style20W400(),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             OnboardingSkipButton(
               ontap: () {
                 if (cubit.currentIndex < onboardingPages.length - 1) {

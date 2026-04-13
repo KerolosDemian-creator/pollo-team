@@ -1,3 +1,4 @@
 class ApiEndpoints {
-  static const baseUrl = 'https://api.ship.com/api/v1';
+  static const baseUrl = 'https://pollostore.com/api/';
+  static const listCategories = 'v1/categories';
 }

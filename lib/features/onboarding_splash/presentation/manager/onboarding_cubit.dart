@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pollo/features/onboarding_splash/data/model/onboarding_page_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 part 'onboarding_states.dart';
