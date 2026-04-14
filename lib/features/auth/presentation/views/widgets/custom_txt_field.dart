@@ -9,10 +9,14 @@ class CustomTxtField extends StatelessWidget {
     required this.hintText,
     required this.iconButton,
     required this.keyboardType,
+    required this.txtFieldController,
+    required this.validator,
   });
   final String hintText;
   final IconButton iconButton;
   final TextInputType keyboardType;
+  final TextEditingController txtFieldController;
+  final FormFieldValidator<String>? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,8 @@ class CustomTxtField extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(2),
       child: TextFormField(
+        validator: validator,
+        controller: txtFieldController,
         keyboardType: keyboardType,
         decoration: InputDecoration(
           suffixIcon: iconButton,

@@ -58,7 +58,7 @@ class SignupBody extends StatelessWidget {
                 ),
               ),
 
-              const SignUpForm(),
+              SignUpForm(),
               SizedBox(height: 20.h),
             ],
           ),

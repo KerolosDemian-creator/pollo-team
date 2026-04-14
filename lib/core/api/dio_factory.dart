@@ -24,6 +24,15 @@ class DioFactory {
         baseUrl: ApiEndpoints.baseUrl,
         connectTimeout: _defaultTimeOut,
         receiveTimeout: _defaultTimeOut,
+        followRedirects: true,
+        maxRedirects: 5,
+        validateStatus: (status) {
+          return status! < 500;
+        },
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
       ),
     );
     _addAuthInterceptor();
@@ -75,5 +84,9 @@ class DioFactory {
       (interceptor) => interceptor is InterceptorsWrapper,
     );
     _addAuthInterceptor();
+  }
+
+  static void setTokenAfterLogin(String token) {
+    _dioInstance?.options.headers['Authorization'] = 'Bearer $token';
   }
 }

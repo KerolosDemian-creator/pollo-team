@@ -11,11 +11,16 @@ class AuthFieldItem extends StatelessWidget {
     required this.iconData,
     required this.keyboardType,
     required this.fieldTitle,
+    required this.txtFieldController,
+    required this.validator,
   });
   final String hintText;
   final IconData iconData;
   final TextInputType keyboardType;
   final String fieldTitle;
+  final TextEditingController txtFieldController;
+  final FormFieldValidator<String>? validator;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,6 +38,8 @@ class AuthFieldItem extends StatelessWidget {
             onPressed: () {},
             icon: Icon(iconData, color: AppColors.lightGray),
           ),
+          txtFieldController: txtFieldController,
+          validator: validator,
         ),
       ],
     );

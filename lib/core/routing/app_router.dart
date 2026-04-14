@@ -6,26 +6,39 @@ import 'package:pollo/features/home/presentation/views/home_screen.dart';
 import 'package:pollo/features/onboarding_splash/presentation/views/onboarding_screen.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings setting) {
-    switch (setting.name) {
+  Route? generateRoute(RouteSettings settings) {
+    switch (settings.name) {
       case Routes.onboardingScreen:
         return MaterialPageRoute(
-          builder: (context) => const OnboardingScreen(),
+          settings: settings,
+          builder: (_) => const OnboardingScreen(),
         );
 
       case Routes.loginScreen:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const LoginScreen(),
+        );
+
       case Routes.signUpScreen:
-        // return MaterialPageRoute(builder: (context) => const SignUpScreen());
-        return MaterialPageRoute(builder: (context) => const SignupScreen());
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const SignupScreen(),
+        );
+
       case Routes.homeScreen:
-        // return MaterialPageRoute(builder: (context) => const HomeScreen());
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const HomeScreen(),
+        );
 
       default:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: Center(child: Text('No routes defined for ${setting.name}')),
+          settings: settings,
+          builder: (_) => Scaffold(
+            body: Center(
+              child: Text('No route defined for ${settings.name}'),
+            ),
           ),
         );
     }

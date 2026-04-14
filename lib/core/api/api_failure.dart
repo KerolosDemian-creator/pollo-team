@@ -5,15 +5,12 @@ import 'package:pollo/core/validation/local_keys.dart';
 
 abstract class Failure {
   final String message;
-
   const Failure(this.message);
 }
 
-/// Represents failures coming from server/API calls.
 class ServerFailure extends Failure {
   const ServerFailure(super.errorMessage);
 
-  /// Create a [ServerFailure] from a [DioException].
   factory ServerFailure.fromDioException(DioException error) {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
@@ -31,10 +28,13 @@ class ServerFailure extends Failure {
             ? ServerFailure(LocaleKeys.noInternet.tr())
             : ServerFailure(LocaleKeys.connectionError.tr());
       case DioExceptionType.badResponse:
-        return ServerFailure.fromResponse(
-          statusCode: error.response?.statusCode ?? 500,
-          data: error.response?.data,
-        );
+        if (error.response != null) {
+          return ServerFailure.fromResponse(
+            statusCode: error.response!.statusCode ?? 500,
+            data: error.response!.data,
+          );
+        }
+        return ServerFailure(LocaleKeys.unknown.tr());
       case DioExceptionType.unknown:
         return _isNetworkError(error)
             ? ServerFailure(LocaleKeys.noInternet.tr())
@@ -42,57 +42,47 @@ class ServerFailure extends Failure {
     }
   }
 
-  /// Create a [ServerFailure] from an HTTP [statusCode] and optional [data].
   factory ServerFailure.fromResponse({required int statusCode, dynamic data}) {
     final parsedMessage = _parseResponseMessage(data);
+
+    if (parsedMessage != null) return ServerFailure(parsedMessage);
+
     switch (statusCode) {
       case 400:
-        return ServerFailure(parsedMessage ?? LocaleKeys.badRequest.tr());
+        return ServerFailure(LocaleKeys.badRequest.tr());
       case 401:
-        return ServerFailure(parsedMessage ?? LocaleKeys.unauthorized.tr());
+        return ServerFailure(LocaleKeys.unauthorized.tr());
       case 403:
-        return ServerFailure(parsedMessage ?? LocaleKeys.forbidden.tr());
+        return ServerFailure(LocaleKeys.forbidden.tr());
       case 404:
         return ServerFailure(LocaleKeys.notFound.tr());
-      case 408:
-        return ServerFailure(LocaleKeys.requestTimeout.tr());
       case 500:
         return ServerFailure(LocaleKeys.internal.tr());
-      case 503:
-        return ServerFailure(LocaleKeys.serviceUnavailable.tr());
       default:
-        return ServerFailure(
-          '${tr(LocaleKeys.unknown.tr())} (HTTP $statusCode)',
-        );
+        return ServerFailure('${LocaleKeys.unknown.tr()} ($statusCode)');
     }
   }
 
   static String? _parseResponseMessage(dynamic data) {
     if (data == null) return null;
-    if (data is String && data.isNotEmpty) {
-      return data;
-    }
-    if (data is List && data.isNotEmpty) {
-      return data.first.toString();
-    }
-    if (data is Map<String, dynamic>) {
-      if (data['errors'] is List && (data['errors'] as List).isNotEmpty) {
-        final first = (data['errors'] as List).first;
-        if (first is Map && first['value'] is String) {
-          return first['value'] as String;
-        }
-        return first.toString();
-      }
 
-      final msg = data['message']?.toString();
-      if (msg != null && msg.isNotEmpty) {
-        return msg;
-      }
-      final inner = data['data']?.toString();
-      if (inner != null && inner.isNotEmpty) {
-        return inner;
+    if (data is Map) {
+      if (data['message'] != null) return data['message'].toString();
+
+      if (data['errors'] != null) {
+        var errors = data['errors'];
+        if (errors is Map && errors.isNotEmpty) {
+          var firstError = errors.values.first;
+          return firstError is List
+              ? firstError.first.toString()
+              : firstError.toString();
+        }
+        if (errors is List && errors.isNotEmpty) return errors.first.toString();
       }
     }
+
+    if (data is String && data.isNotEmpty) return data;
+
     return null;
   }
 

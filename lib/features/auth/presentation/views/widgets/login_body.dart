@@ -13,52 +13,54 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(AppImages.gradientLoginAppbar),
-        SizedBox(height: 30.h),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: CustomGradientText(
-                  text: Text(
-                    LocaleKeys.signin.tr(),
-                    style: TextStyles.style24W700().copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Image.asset(AppImages.gradientLoginAppbar),
+          SizedBox(height: 30.h),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: CustomGradientText(
+                    text: Text(
+                      LocaleKeys.signin.tr(),
+                      style: TextStyles.style24W700().copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    end: .8,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    LocaleKeys.signInToRegisterationAccount.tr(),
+                    style: TextStyles.style16W500(),
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    height: 6.h,
+                    width: 40.w,
+                    decoration: BoxDecoration(
+                      gradient: AppColors.appGradientColor(),
+                      borderRadius: BorderRadius.circular(30.r),
                     ),
                   ),
-                  end: .8,
                 ),
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  LocaleKeys.signInToRegisterationAccount.tr(),
-                  style: TextStyles.style16W500(),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  height: 6.h,
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                    gradient: AppColors.appGradientColor(),
-                    borderRadius: BorderRadius.circular(30.r),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.h),
-              const LoginForm(),
-            ],
+                SizedBox(height: 16.h),
+                const LoginForm(),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

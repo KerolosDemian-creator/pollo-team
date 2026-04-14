@@ -12,8 +12,8 @@ class ResponseModel {
   });
 
   factory ResponseModel.fromMap(Map<String, dynamic> data) => ResponseModel(
-        code: data['code'],
+        code: int.tryParse(data['code'].toString()) ?? 0,
         merchant: UserModel.fromJson(data['merchant']),
-        token: data['token'],
+        token: data['token'] ?? '',
       );
 }

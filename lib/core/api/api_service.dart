@@ -1,24 +1,32 @@
 import 'package:dio/dio.dart';
-import 'package:pollo/core/api/api_endpoints.dart';
 
 class ApiService {
-  final Dio dio;
+  final Dio _dio;
 
-  ApiService({required this.dio});
+  ApiService({required Dio dio}) : _dio = dio;
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
-    final response = await dio.get("${ApiEndpoints.baseUrl}$endPoint");
-    return response.data;
+  Future<dynamic> post({
+    required String endPoint,
+    required dynamic body,
+  }) async {
+    try {
+      final response = await _dio.post(endPoint, data: body);
+      return response.data;
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<Map<String, dynamic>> post({
-    required String endPoint,
-    required Map<String, dynamic> body,
-  }) async {
-    final response = await dio.post(
-      "${ApiEndpoints.baseUrl}$endPoint",
-      data: body,
-    );
-    return response.data;
+  Future<dynamic> get({required String endPoint}) async {
+    try {
+      final response = await _dio.get(endPoint);
+      return response.data;
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      rethrow;
+    }
   }
 }
