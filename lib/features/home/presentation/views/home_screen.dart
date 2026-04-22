@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pollo/core/api/api_service.dart';
 import 'package:pollo/core/api/dio_factory.dart';
 import 'package:pollo/features/home/data/repos/home_repo_imp.dart';
-import 'package:pollo/features/home/presentation/manager/home_cubit.dart';
+import 'package:pollo/features/home/presentation/manager/home/home_cubit.dart';
 import 'package:pollo/features/home/presentation/views/widgets/home_body.dart';
 
 class HomeScreen extends StatelessWidget {

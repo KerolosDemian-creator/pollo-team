@@ -15,7 +15,7 @@ dependencies:
   flutter_bloc: ^8.1.3 # متوافقة مع Dart 3.3
   rename: ^3.0.2
   flutter_screenutil: ^5.9.0
-  get_it: ^7.6.7
+  get_it: ^9.2.1
   flutter_svg: ^2.0.9
   shared_preferences: ^2.2.2
   #flutter_native_splash: ^2.4.7
@@ -34,7 +34,11 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   readmore: ^2.2.0
   dotted_border: 2.0.0+3 # دي أهم واحدة عشان الـ Error يختفي
-
+  firebase_auth: ^5.0.0 # تأكد من استخدام أحدث إصدار
+  google_sign_in: ^6.2.1 # دي المكتبة الناقصة
+  flutter_facebook_auth: ^7.1.1 # عشان الفيسبوك
+  json_annotation: ^4.9.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -11,6 +11,8 @@ class ApiService {
   }) async {
     try {
       final response = await _dio.post(endPoint, data: body);
+      print(response.data);
+
       return response.data;
     } on DioException {
       rethrow;

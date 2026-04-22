@@ -55,11 +55,14 @@ class HomeBody extends StatelessWidget {
             SizedBox(height: 24.h),
 
             /// Categories
-            Text(
-              LocaleKeys.categories.tr(),
-              style: TextStyles.style20W400().copyWith(
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
+            Align(
+              alignment: AlignmentGeometry.centerLeft,
+              child: Text(
+                LocaleKeys.categories.tr(),
+                style: TextStyles.style20W400().copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
             ),
             SizedBox(height: 8.h),

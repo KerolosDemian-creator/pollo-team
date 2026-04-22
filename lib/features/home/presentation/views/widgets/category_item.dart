@@ -4,9 +4,14 @@ import 'package:pollo/core/resources/colors.dart';
 import 'package:pollo/core/resources/styles.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.imageUrl, required this.title});
+  const CategoryItem(
+      {super.key,
+      required this.imageUrl,
+      required this.title,
+      required this.id});
   final String imageUrl;
   final String title;
+  final int id;
   @override
   Widget build(BuildContext context) {
     return Container(

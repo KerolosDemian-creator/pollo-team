@@ -55,7 +55,7 @@ class LoginBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16.h),
-                const LoginForm(),
+                LoginForm(),
               ],
             ),
           ),

@@ -15,6 +15,9 @@ class AppImages {
       'assets/images/auth/login_appbar_gradient_img.png';
 
   static const String adsImage = 'assets/images/home/ads_img.png';
+  static const String adsImage2 = 'assets/images/home/ads_img2.png';
+  static const String subcategoryImageTest =
+      'assets/images/home/sub_category_img_test.png';
 
   ///svgs
 

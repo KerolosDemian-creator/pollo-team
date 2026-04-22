@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pollo/features/home/presentation/manager/home_cubit.dart';
-import 'package:pollo/features/home/presentation/manager/home_state.dart';
+import 'package:pollo/core/routing/routes.dart';
+import 'package:pollo/core/validation/extentions.dart';
+import 'package:pollo/features/home/presentation/manager/home/home_cubit.dart';
+import 'package:pollo/features/home/presentation/manager/home/home_state.dart';
 import 'package:pollo/features/home/presentation/views/widgets/category_item.dart';
 
 class CategoriesListView extends StatelessWidget {
@@ -17,7 +19,6 @@ class CategoriesListView extends StatelessWidget {
           loading: () => const Center(child: CircularProgressIndicator()),
           loaded: (categories) => GridView.builder(
             itemCount: categories.length,
-            padding: EdgeInsets.all(10.w),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               mainAxisSpacing: 10.0,
@@ -25,9 +26,21 @@ class CategoriesListView extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               final category = categories[index];
-              return CategoryItem(
-                imageUrl: category.image,
-                title: category.name,
+              return InkWell(
+                onTap: () {
+                  context.pushNamed(
+                    Routes.subCategoryScreen,
+                    arguments: {
+                      'id': category.id,
+                      'title': category.name,
+                    },
+                  );
+                },
+                child: CategoryItem(
+                  imageUrl: category.image,
+                  title: category.name,
+                  id: category.id,
+                ),
               );
             },
           ),

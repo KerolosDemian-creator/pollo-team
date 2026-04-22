@@ -44,6 +44,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle style22W600({Color? color}) {
+    return TextStyle(
+      fontSize: 22.sp,
+      color: color ?? AppColors.black,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle style24W700({Color? color}) {
     return TextStyle(
       fontSize: 24.sp,

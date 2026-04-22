@@ -11,6 +11,7 @@ import 'package:pollo/core/validation/locale_keys.dart';
 import 'package:pollo/core/widgets/custom_gradient_text.dart';
 import 'package:pollo/features/auth/presentation/manager/sign_up/sign_up_cubit.dart';
 import 'package:pollo/features/auth/presentation/manager/sign_up/sign_up_state.dart';
+import 'package:pollo/features/auth/presentation/manager/social_media_auth/social_media_auth_cubit.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/app_button.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/auth_field_item.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/social_media_icon.dart';
@@ -194,8 +195,7 @@ class SignUpForm extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(
-                          context); // أو context.pushReplacementNamed(Routes.loginScreen);
+                      Navigator.pop(context);
                     },
                     child: CustomGradientText(
                       end: .8,
@@ -226,9 +226,19 @@ class SignUpForm extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SocialMediaIcon(iconImg: AppImages.googleIcon),
+                  SocialMediaIcon(
+                    iconImg: AppImages.googleIcon,
+                    ontab: () {
+                      context.read<SocialMadiaCubit>().loginWithGoogle();
+                    },
+                  ),
                   SizedBox(width: 16.w),
-                  const SocialMediaIcon(iconImg: AppImages.facebookIcon),
+                  SocialMediaIcon(
+                    iconImg: AppImages.facebookIcon,
+                    ontab: () {
+                      context.read<SocialMadiaCubit>().loginWithFacebook();
+                    },
+                  ),
                 ],
               ),
             ],

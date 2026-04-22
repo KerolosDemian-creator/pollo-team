@@ -11,28 +11,19 @@ import 'package:pollo/core/validation/locale_keys.dart';
 import 'package:pollo/core/widgets/custom_gradient_text.dart';
 import 'package:pollo/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:pollo/features/auth/presentation/manager/login_cubit/login_state.dart';
+import 'package:pollo/features/auth/presentation/manager/social_media_auth/social_media_auth_cubit.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/app_button.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/auth_field_item.dart';
 import 'package:pollo/features/auth/presentation/views/widgets/social_media_icon.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class LoginForm extends StatelessWidget {
+  LoginForm({super.key});
 
-  @override
-  State<LoginForm> createState() => _LoginFormState();
-}
-
-class _LoginFormState extends State<LoginForm> {
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
-  @override
-  void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
+  final passwordController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -185,9 +176,19 @@ class _LoginFormState extends State<LoginForm> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SocialMediaIcon(iconImg: AppImages.googleIcon),
+                  SocialMediaIcon(
+                    iconImg: AppImages.googleIcon,
+                    ontab: () {
+                      context.read<SocialMadiaCubit>().loginWithGoogle();
+                    },
+                  ),
                   SizedBox(width: 16.w),
-                  const SocialMediaIcon(iconImg: AppImages.facebookIcon),
+                  SocialMediaIcon(
+                    iconImg: AppImages.facebookIcon,
+                    ontab: () {
+                      context.read<SocialMadiaCubit>().loginWithFacebook();
+                    },
+                  ),
                 ],
               ),
             ],

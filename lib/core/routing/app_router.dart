@@ -3,6 +3,7 @@ import 'package:pollo/core/routing/routes.dart';
 import 'package:pollo/features/auth/presentation/views/login_screen.dart';
 import 'package:pollo/features/auth/presentation/views/signup_screen.dart';
 import 'package:pollo/features/home/presentation/views/home_screen.dart';
+import 'package:pollo/features/home/presentation/views/sub_categories_screen.dart';
 import 'package:pollo/features/onboarding_splash/presentation/views/onboarding_screen.dart';
 
 class AppRouter {
@@ -30,6 +31,18 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => const HomeScreen(),
+        );
+      case Routes.subCategoryScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        final categoryId = args['id'] as int;
+        final title = args['title'] as String;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => SubCategoriesScreen(
+            id: categoryId,
+            title: title,
+          ),
         );
 
       default:

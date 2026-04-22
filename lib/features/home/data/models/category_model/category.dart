@@ -1,49 +1,30 @@
-import 'dart:convert';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:equatable/equatable.dart';
+part 'category.freezed.dart';
+part 'category.g.dart';
 
-class Category extends Equatable {
-  final int id;
-  final String image;
-  final String name;
-  final String? type;
-  final DateTime createdAt;
-
-  const Category(
-      {required this.id,
-      required this.image,
-      required this.name,
-      this.type,
-      required this.createdAt});
-
-  factory Category.fromMap(Map<String, dynamic> data) => Category(
-        id: data['id'] as int,
-        image: data['image'] as String,
-        name: data['name'] as String,
-        type: data['type'] as String?,
-        createdAt: DateTime.parse(data['created_at'] as String),
-      );
-
-  Map<String, dynamic> toMap() => {
-        'id': id,
-        'image': image,
-        'name': name,
-        'type': type,
-        'created_at': createdAt.toIso8601String(),
-      };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Category].
-  factory Category.fromJson(String data) {
-    return Category.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Category] to a JSON string.
-  String toJson() => json.encode(toMap());
+class DateTimeConverter implements JsonConverter<DateTime, String> {
+  const DateTimeConverter();
 
   @override
-  List<Object?> get props => [id, image, name, type, createdAt];
+  DateTime fromJson(String json) => DateTime.parse(json);
+
+  @override
+  String toJson(DateTime object) => object.toIso8601String();
+}
+
+@freezed
+class Category with _$Category {
+  const factory Category({
+    required int id,
+    required String image,
+    required String name,
+    String? type,
+    @JsonKey(name: 'created_at')
+    @DateTimeConverter()
+    required DateTime createdAt,
+  }) = _Category;
+
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
 }
