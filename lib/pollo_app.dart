@@ -23,7 +23,7 @@ class PolloApp extends StatelessWidget {
           locale: context.locale,
           supportedLocales: context.supportedLocales,
           localizationsDelegates: context.localizationDelegates,
-          initialRoute: Routes.onboardingScreen,
+          initialRoute: Routes.productDetailsScreen,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRoute,
         );

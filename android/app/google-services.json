@@ -43,6 +43,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "659528240127-banpe4c7djegn67tsvhq9gactmklbr69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pollo.app",
+            "certificate_hash": "8027c1f22c14afc8add08e1fb7f196b6d52326a1"
+          }
+        },
+        {
           "client_id": "659528240127-err6ql56o669r6scea4tf2kt7mhhsh1f.apps.googleusercontent.com",
           "client_type": 3
         }

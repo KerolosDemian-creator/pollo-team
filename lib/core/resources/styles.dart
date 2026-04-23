@@ -12,6 +12,14 @@ class TextStyles {
     );
   }
 
+  static TextStyle style13W500({Color? color}) {
+    return TextStyle(
+      fontSize: 13.sp,
+      color: color ?? AppColors.gray,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle style14W600({Color? color}) {
     return TextStyle(
       fontSize: 14.sp,

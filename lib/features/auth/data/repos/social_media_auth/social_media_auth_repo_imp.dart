@@ -9,10 +9,13 @@ class SocialAuthRepositoryImp implements SocialMadiaAuthRepo {
   @override
   Future<UserCredential> signInWithFacebook() async {
     final LoginResult result = await FacebookAuth.instance.login();
+
     if (result.status == LoginStatus.success) {
       final OAuthCredential credential =
           FacebookAuthProvider.credential(result.accessToken!.tokenString);
       return await _auth.signInWithCredential(credential);
+    } else if (result.status == LoginStatus.cancelled) {
+      throw 'تم إلغاء تسجيل الدخول';
     } else {
       throw result.message ?? 'فشل تسجيل الدخول بفيسبوك';
     }
@@ -21,14 +24,19 @@ class SocialAuthRepositoryImp implements SocialMadiaAuthRepo {
   @override
   Future<UserCredential> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    if (googleUser == null) throw 'تم إلغاء تسجيل الدخول بجوجل';
 
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-    return await _auth.signInWithCredential(credential);
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    if (googleAuth != null) {
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      return await _auth.signInWithCredential(credential);
+    } else {
+      throw 'حدث خطأ أثناء الحصول على بيانات جوجل';
+    }
   }
 }

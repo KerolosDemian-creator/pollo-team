@@ -61,6 +61,7 @@ flutter:
     - assets/images/
     - assets/images/home/
     - assets/images/onboarding/
+    - assets/images/products/
     - assets/svgs/
     - assets/svgs/auth/
     - assets/svgs/home/

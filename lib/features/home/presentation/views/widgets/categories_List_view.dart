@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pollo/core/routing/routes.dart';
 import 'package:pollo/core/validation/extentions.dart';
 import 'package:pollo/features/home/presentation/manager/home/home_cubit.dart';

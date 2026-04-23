@@ -10,6 +10,8 @@ abstract class AppColors {
   static const Color lightBackground = Color(0xffECECEC);
   static const Color primary2 = Color(0xff064198);
   static const Color mauve = Color(0xffC388B3);
+  static const Color starsColor = Color(0xffD69304);
+  static const Color green = Color(0xff06833E);
 
   static LinearGradient appGradientColor({double end = 1.0}) => LinearGradient(
         colors: const [AppColors.primary2, AppColors.primary],

@@ -5,6 +5,8 @@ import 'package:pollo/features/auth/presentation/views/signup_screen.dart';
 import 'package:pollo/features/home/presentation/views/home_screen.dart';
 import 'package:pollo/features/home/presentation/views/sub_categories_screen.dart';
 import 'package:pollo/features/onboarding_splash/presentation/views/onboarding_screen.dart';
+import 'package:pollo/features/products/presentation/views/product_details_screen.dart';
+import 'package:pollo/features/products/presentation/views/products_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -44,7 +46,16 @@ class AppRouter {
             title: title,
           ),
         );
-
+      case Routes.productScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const ProductsScreen(),
+        );
+      case Routes.productDetailsScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const ProductDetailsScreen(),
+        );
       default:
         return MaterialPageRoute(
           settings: settings,

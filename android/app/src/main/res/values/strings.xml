@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pollo</string>
+    
+    <string name="facebook_app_id">980006291050846</string> 
+    
+    <string name="fb_login_protocol_scheme">fb980006291050846</string>
+    
+    <string name="facebook_client_token">28d66984ade3d198645758c9b539bb80</string>
+</resources>
